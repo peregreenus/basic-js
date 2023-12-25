@@ -28,8 +28,8 @@ function transform(arr) {
 
     switch (sequence) {
       case '--discard-next':
-        newArr.splice(seqInd, 2);
-        i = i - 1;
+        newArr.splice(seqInd, 3);
+        i--;
         break;
       case '--discard-prev':
         if (seqInd !== 0 && newArr[seqInd - 1]) {
@@ -37,7 +37,7 @@ function transform(arr) {
         } else {
           newArr.splice(seqInd, 1)
         }
-        i = i - 1;
+        i--;
         break;
       case '--double-next':
         if (seqInd !== newArr.length - 1) {
@@ -45,7 +45,6 @@ function transform(arr) {
         } else {
           newArr.splice(seqInd, 1);
         }
-        // i++;
         break;
       case '--double-prev':
         if (seqInd !== 0) {
@@ -53,7 +52,6 @@ function transform(arr) {
         } else {
           newArr.splice(seqInd, 1);
         }
-        // i++;
         break;
     }
   }
